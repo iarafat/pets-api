@@ -14,4 +14,10 @@ class Pet extends Model
         'status',
         'photo',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

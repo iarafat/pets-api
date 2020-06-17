@@ -17,10 +17,10 @@ class CreatePetsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('name');
-            $table->double('weight')->nullable();
-            $table->enum('pet_category', ['CAT', 'DOG', 'RABBIT', 'STINGRAY']);
-            $table->enum('status', ['AVAILABLE', 'CHECKEDOUT']);
+            $table->double('weight');
             $table->string('photo');
+            $table->enum('category', ['CAT', 'DOG', 'RABBIT', 'STINGRAY']);
+            $table->enum('status', ['AVAILABLE', 'CHECKEDOUT'])->default('AVAILABLE');
             $table->timestamps();
         });
     }
