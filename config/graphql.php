@@ -124,6 +124,7 @@ return [
     'types' => [
         'user' => \App\GraphQL\Types\UserType::class,
         'pet' => \App\GraphQL\Types\PetType::class,
+        'authPayload' => \App\GraphQL\Types\AuthPayload::class,
 
         // 'example'           => ExampleType::class,
         // 'relation_example'  => ExampleRelationType::class,

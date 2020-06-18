@@ -17,7 +17,7 @@ class LogInMutation extends Mutation
 
     public function type(): GraphqlType
     {
-        return GraphQL::type('user');
+        return GraphQL::type('authPayload');
     }
 
     public function args(): array
@@ -45,8 +45,12 @@ class LogInMutation extends Mutation
             throw new Exception('Unauthorized!');
         }
 
+
         // generated jwt token for user and return the token.
-        return $token;
+        return [
+            'user' => auth()->user(),
+            'token' => $token
+        ];
     }
 
     protected function rules(array $args = []): array

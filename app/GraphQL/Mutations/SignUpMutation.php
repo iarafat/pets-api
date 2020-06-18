@@ -17,7 +17,7 @@ class SignUpMutation extends Mutation
 
     public function type(): GraphqlType
     {
-        return GraphQL::type('user');
+        return GraphQL::type('authPayload');
     }
 
     public function args(): array
@@ -46,14 +46,19 @@ class SignUpMutation extends Mutation
             'password' => bcrypt($args['password']),
         ]);
 
+        $token = auth()->login($user);
+
         // generated jwt token for user and return the token.
-        return auth()->login($user);
+        return [
+            'user' => auth()->user(),
+            'token' => $token
+        ];
     }
 
     protected function rules(array $args = []): array
     {
         return [
-            'id' => ['required'],
+            'name' => ['required'],
             'email' => ['required', 'email', 'unique:users'],
             'password' => ['required'],
         ];

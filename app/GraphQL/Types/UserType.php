@@ -23,7 +23,7 @@ class UserType extends GraphQLType
                 'description' => 'The id of a user',
             ],
             'name' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::string(),
                 'description' => 'The name of a user',
             ],
             'email' => [
@@ -32,7 +32,7 @@ class UserType extends GraphQLType
             ],
             'pets' => [
                 'type' => Type::listOf(GraphQL::type('pet')),
-                'description' => 'Photo of a pet',
+                'description' => 'List of pets of a user',
             ],
             'created_at' => [
                 'type' => Type::string(),
