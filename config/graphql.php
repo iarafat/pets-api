@@ -121,6 +121,9 @@ return [
     // ]
     //
     'types' => [
+        'user' => \App\GraphQL\Types\UserType::class,
+        'pet' => \App\GraphQL\Types\PetType::class,
+
         // 'example'           => ExampleType::class,
         // 'relation_example'  => ExampleRelationType::class,
         // \Rebing\GraphQL\Support\UploadType::class,

@@ -10,7 +10,7 @@ class Pet extends Model
         'user_id',
         'name',
         'weight',
-        'pet_category',
+        'category',
         'status',
         'photo',
     ];
