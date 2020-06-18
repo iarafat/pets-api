@@ -104,7 +104,8 @@ return [
                 // 'example_query' => ExampleQuery::class,
             ],
             'mutation' => [
-                // 'example_mutation'  => ExampleMutation::class,
+                'signUp' => \App\GraphQL\Mutations\SignUpMutation::class,
+                'logIn' => \App\GraphQL\Mutations\LogInMutation::class,
             ],
             'middleware' => [],
             'method' => ['get', 'post'],
