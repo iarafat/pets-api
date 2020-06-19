@@ -119,6 +119,8 @@ return [
                 'me' => \App\GraphQL\Queries\MeQuery::class,
             ],
             'mutation' => [
+                'checkOut' => \App\GraphQL\Mutations\CheckOutMutation::class,
+                'checkIn' => \App\GraphQL\Mutations\CheckInMutation::class,
             ],
             'middleware' => ['auth:api'],
             'method' => ['get', 'post'],
