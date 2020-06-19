@@ -84,11 +84,11 @@ class PetType extends GraphQLType
 
     protected function resolveCheckoutDateField($root, $args)
     {
-        return (string)$root->checkout_date;
+        return (string)$root['checkout_date'];
     }
 
     protected function resolveCheckinDateField($root, $args)
     {
-        return (string)$root->checkin_date;
+        return (string)$root['checkin_date'];
     }
 }

@@ -13,6 +13,8 @@ class Pet extends Model
         'category',
         'status',
         'photo',
+        'checkout_date',
+        'checkin_date',
     ];
 
     public function user()
