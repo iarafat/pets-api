@@ -11,7 +11,7 @@ use Rebing\GraphQL\Support\Query;
 use Rebing\GraphQL\Support\SelectFields;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 
-class Me extends Query
+class MeQuery extends Query
 {
     protected $attributes = [
         'name' => 'me',

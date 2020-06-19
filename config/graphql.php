@@ -112,12 +112,12 @@ return [
         ],
         'user' => [
             'query' => [
-                'me' => \App\GraphQL\Queries\Me::class,
+                'me' => \App\GraphQL\Queries\MeQuery::class,
             ],
             'mutation' => [
             ],
             'middleware' => ['auth:api'],
-            'method' => ['post'],
+            'method' => ['get', 'post'],
         ],
     ],
 
@@ -134,6 +134,8 @@ return [
         'user' => \App\GraphQL\Types\UserType::class,
         'pet' => \App\GraphQL\Types\PetType::class,
         'authPayload' => \App\GraphQL\Types\AuthPayload::class,
+        'PetCategoryEnum' => \App\GraphQL\Enums\PetCategoryEnum::class,
+        'PetStatusEnum' => \App\GraphQL\Enums\PetStatusEnum::class,
 
         // 'example'           => ExampleType::class,
         // 'relation_example'  => ExampleRelationType::class,
