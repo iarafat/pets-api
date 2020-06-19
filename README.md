@@ -1,6 +1,6 @@
 # Pets-API
 
-API of pets library.
+GraphQL API of pets library.
 
 
 **Clone of Pet Library graphql api:** http://pet-library.moonhighway.com/
