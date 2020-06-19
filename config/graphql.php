@@ -104,6 +104,8 @@ return [
                 'totalPets' => \App\GraphQL\Queries\TotalPetsQuery::class,
                 'allPets' => \App\GraphQL\Queries\AllPetsQuery::class,
                 'petById' => \App\GraphQL\Queries\PetByIdQuery::class,
+                'totalUsers' => \App\GraphQL\Queries\TotalUsersQuery::class,
+                'allUsers' => \App\GraphQL\Queries\AllUsersQuery::class,
             ],
             'mutation' => [
                 'signUp' => \App\GraphQL\Mutations\SignUpMutation::class,
