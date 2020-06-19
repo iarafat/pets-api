@@ -101,7 +101,9 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                // 'example_query' => ExampleQuery::class,
+                'totalPets' => \App\GraphQL\Queries\TotalPetsQuery::class,
+                'allPets' => \App\GraphQL\Queries\AllPetsQuery::class,
+                'petById' => \App\GraphQL\Queries\PetByIdQuery::class,
             ],
             'mutation' => [
                 'signUp' => \App\GraphQL\Mutations\SignUpMutation::class,
@@ -134,8 +136,8 @@ return [
         'user' => \App\GraphQL\Types\UserType::class,
         'pet' => \App\GraphQL\Types\PetType::class,
         'authPayload' => \App\GraphQL\Types\AuthPayload::class,
-        'PetCategoryEnum' => \App\GraphQL\Enums\PetCategoryEnum::class,
-        'PetStatusEnum' => \App\GraphQL\Enums\PetStatusEnum::class,
+        'petCategory' => \App\GraphQL\Enums\PetCategoryEnum::class,
+        'petStatus' => \App\GraphQL\Enums\PetStatusEnum::class,
 
         // 'example'           => ExampleType::class,
         // 'relation_example'  => ExampleRelationType::class,

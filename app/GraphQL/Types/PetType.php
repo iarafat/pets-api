@@ -3,7 +3,9 @@
 namespace App\GraphQL\Types;
 
 use App\Pet;
+use App\User;
 use GraphQL\Type\Definition\Type;
+use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Type as GraphQLType;
 
 class PetType extends GraphQLType
@@ -21,9 +23,10 @@ class PetType extends GraphQLType
                 'type' => Type::nonNull(Type::int()),
                 'description' => 'The id of a pet',
             ],
-            'user_id' => [
-                'type' => Type::nonNull(Type::int()),
-                'description' => 'The id of a user',
+            'user' => [
+                'type' => GraphQL::type('user'),
+                'description' => 'The user of a pet',
+                'selectable' => false,
             ],
             'name' => [
                 'type' => Type::nonNull(Type::string()),
@@ -54,6 +57,11 @@ class PetType extends GraphQLType
                 'description' => 'Date a pet was updated',
             ],
         ];
+    }
+
+    protected function resolveUserField($root, $args)
+    {
+        return User::where('id', $root['user_id'])->first();
     }
 
     protected function resolveCreatedAtField($root, $args)

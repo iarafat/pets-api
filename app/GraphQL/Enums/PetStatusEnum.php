@@ -9,7 +9,7 @@ use Rebing\GraphQL\Support\EnumType;
 class PetStatusEnum extends EnumType
 {
     protected $attributes = [
-        'name' => 'PetStatusEnum',
+        'name' => 'petStatus',
         'description' => 'An pet status enum',
         'values' => [
             'AVAILABLE' => 'AVAILABLE',
