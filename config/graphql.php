@@ -110,6 +110,15 @@ return [
             'middleware' => [],
             'method' => ['get', 'post'],
         ],
+        'user' => [
+            'query' => [
+                'me' => \App\GraphQL\Queries\Me::class,
+            ],
+            'mutation' => [
+            ],
+            'middleware' => ['auth:api'],
+            'method' => ['post'],
+        ],
     ],
 
     // The types available in the application. You can then access it from the
