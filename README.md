@@ -2,9 +2,9 @@
 
 API of pets library.
 
-```
-Clone of Pet Library api: http://pet-library.moonhighway.com/
-```
+
+**Clone of Pet Library graphql api:** http://pet-library.moonhighway.com/
+
 
 ## Getting Started
 
