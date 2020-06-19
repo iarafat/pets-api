@@ -21,6 +21,8 @@ class CreatePetsTable extends Migration
             $table->string('photo');
             $table->enum('category', ['CAT', 'DOG', 'RABBIT', 'STINGRAY']);
             $table->enum('status', ['AVAILABLE', 'CHECKEDOUT'])->default('AVAILABLE');
+            $table->dateTime('checkout_date')->nullable();
+            $table->dateTime('checkin_date')->nullable();
             $table->timestamps();
         });
     }

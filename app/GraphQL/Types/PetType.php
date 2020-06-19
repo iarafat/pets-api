@@ -48,6 +48,14 @@ class PetType extends GraphQLType
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'Status of a pet',
             ],
+            'checkout_date' => [
+                'type' => Type::string(),
+                'description' => 'Date a pet was checkedout',
+            ],
+            'checkin_date' => [
+                'type' => Type::string(),
+                'description' => 'Date a pet was checkedin',
+            ],
             'created_at' => [
                 'type' => Type::string(),
                 'description' => 'Date a pet was created',
@@ -72,5 +80,15 @@ class PetType extends GraphQLType
     protected function resolveUpdatedAtField($root, $args)
     {
         return (string)$root->updated_at;
+    }
+
+    protected function resolveCheckoutDateField($root, $args)
+    {
+        return (string)$root->checkout_date;
+    }
+
+    protected function resolveCheckinDateField($root, $args)
+    {
+        return (string)$root->checkin_date;
     }
 }

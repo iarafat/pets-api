@@ -27,7 +27,11 @@ class PetByIdQuery extends Query
     public function args(): array
     {
         return [
-            'id' => ['name' => 'id', 'type' => Type::int(), 'rules' => ['required']],
+            'id' => [
+                'name' => 'id',
+                'type' => Type::int(),
+                'rules' => ['required', 'exists:pets,id']
+            ],
         ];
     }
 
